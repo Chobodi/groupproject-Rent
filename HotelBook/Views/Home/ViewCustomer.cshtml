@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "ViewCustomer";
+    Layout = "~/Views/Shared/_Header.cshtml";
+}
+@using HotelBook.Models
+@model List<Customer>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<h2>ViewCustomer</h2>
+
+
+        <table class="table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Address</th>
+
+
+            </tr>
+            @foreach (var customer in Model)
+            {
+                <tr style="width:80%">
+                    <td>@customer.name</td>
+                    <td>@customer.email</td>
+                    <td>@customer.state</td>
+                    <td>@customer.city</td>
+                    <td>@customer.address</td>
+                    <td><button>@Html.ActionLink("Accept", "setAccept", "Home", new { email=@customer.email},null)</button></td>
+                    <td><button>@Html.ActionLink("Reject", "setReject", "Home", new { email = @customer.email }, null)</button></td>
+
+                    
+        </tr>
+            }
+        </table>

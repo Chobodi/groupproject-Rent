@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Boarding";
+    Layout = "~/Views/Shared/_Header.cshtml";
+}
+@using HotelBook.Models
+@model List<Boarding>
+<style>
+    p.round3 {
+    border: 2px solid red;
+    border-radius: 8px;
+}
+</style>
+<br><br><br>
+<h2>Advertisements</h2>
+        
+            @foreach (var boarding in Model)
+            {<p class="round3">
+				<p>
+				<h4>@boarding.name</h4>
+				Boarding Facilities are available in @boarding.address<br> 
+				@boarding.description<br>
+				@boarding.email
+				</p>
+				</p>
+            }
+		<br><br>
+<div class="col-md-2">
+
+</div>

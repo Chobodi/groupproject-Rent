@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "FirstSignup";
+    Layout = "~/Views/Shared/_Header.cshtml";
+}
+@using HotelBook.Models
+@model Customer
+<div class="row">
+    <div class="col-md-2">
+
+        <p>
+
+        </p>
+    </div>
+    <div class="col-md-8">
+        <h3>SignUp</h3>
+		@Html.ActionLink("Signup for a Hotel", "Signup", "Login",null,new { @class = "btn btn-primary" })
+        @Html.ActionLink("Signup for a Bording House", "Signupboarding", "Login",null,new { @class = "btn btn-primary" })
+    </div>       
+                    
+
+</div>
+        
+    
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            
+        </section>
+    </div>
+
+</div>
+
+
+
+
